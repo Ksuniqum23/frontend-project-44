@@ -1,4 +1,3 @@
-import getName from "../src/cli.js";
 import readlineSync from "readline-sync";
 
 const generateValue = () => {
@@ -8,8 +7,7 @@ const generateValue = () => {
 const generateOperation = () => {
     const operations = ['+', '-', '*'];
     const randomIndex = Math.floor(Math.random() * (operations.length));
-    const operation = operations[randomIndex];
-    return operation;
+    return operations[randomIndex];
 }
 
 const generateMathForm = () => {
@@ -30,29 +28,40 @@ const generateMathForm = () => {
             break;
         default: 'error';
     }
-    let mathForm = [mathFormString, resultMathForm];
-    return mathForm;
+    return [mathFormString, resultMathForm];
 }
 
-const name = getName();
-console.log('What is the result of the expression?');
-
-for (let i = 0; i < 3; i++) {
+const task = 'What is the result of the expression?';
+const gameSet = () => {
     const [value, result] = generateMathForm();
     console.log(`Question: ${value}`);
-    console.log(`result = ${result}`);
     const answer = parseInt(readlineSync.question('Your answer: '), 10);
-
-
-    if (result === answer) {
-        console.log('Correct!');
-    } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was ${result}` );
-        console.log(`Let's try again, ${name}!`);
-        break;
-    }
-
-    if (i === 2) {
-        console.log(`Congratulations, ${name}!`);
-    }
+    return [result, answer];
 }
+
+export {gameSet, task};
+
+// const name = getName();
+// console.log('What is the result of the expression?');
+//
+//
+//
+// for (let i = 0; i < 3; i++) {
+//     const [value, result] = generateMathForm();
+//     console.log(`Question: ${value}`);
+//     console.log(`result = ${result}`);
+//     const answer = parseInt(readlineSync.question('Your answer: '), 10);
+//
+//
+//     if (result === answer) {
+//         console.log('Correct!');
+//     } else {
+//         console.log(`'${answer}' is wrong answer ;(. Correct answer was ${result}` );
+//         console.log(`Let's try again, ${name}!`);
+//         break;
+//     }
+//
+//     if (i === 2) {
+//         console.log(`Congratulations, ${name}!`);
+//     }
+// }

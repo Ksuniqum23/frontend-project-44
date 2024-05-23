@@ -1,10 +1,11 @@
 #!/usr/bin/env node
+import readlineSync from 'readline-sync';
+import getName from '../src/cli.js';
+
+
 const generateValue = () => {
     return Math.floor(Math.random() * 50);
 }
-
-import readlineSync from 'readline-sync';
-import getName from '../src/cli.js';
 
 const name = getName();
 console.log('Answer "yes" if the number is even, otherwise answer "no".');
