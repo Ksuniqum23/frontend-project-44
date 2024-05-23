@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import readlineSync from "readline-sync";
 
 const generateValue = () => {
@@ -31,7 +32,7 @@ const generateMathForm = () => {
     return [mathFormString, resultMathForm];
 }
 
-const task = 'What is the result of the expression?';
+
 const gameSet = () => {
     const [value, result] = generateMathForm();
     console.log(`Question: ${value}`);
@@ -39,7 +40,26 @@ const gameSet = () => {
     return [result, answer];
 }
 
-export {gameSet, task};
+const brainCalcGame = (name) => {
+    const task = 'What is the result of the expression?';
+    console.log(task);
+    for (let i = 0; i < 3; i++) {
+        const [result, answer] = gameSet();
+        if (result === answer) {
+            console.log('Correct!');
+        } else {
+            console.log(`'${answer}' is wrong answer ;(. Correct answer was ${result}` );
+            console.log(`Let's try again, ${name}!`);
+            break;
+        }
+
+        if (i === 2) {
+            console.log(`Congratulations, ${name}!`);
+        }
+    }
+}
+
+export default brainCalcGame;
 
 // const name = getName();
 // console.log('What is the result of the expression?');
