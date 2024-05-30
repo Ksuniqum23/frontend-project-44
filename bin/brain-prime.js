@@ -29,12 +29,13 @@ const gameSet = () => {
 const brainPrimeGame = (name) => {
     const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     console.log(task);
+
     for (let i = 0; i < 3; i++) {
         const [result, answer] = gameSet();
         if (result === answer) {
             console.log('Correct!');
         } else {
-            console.log(`'${answer}' is wrong answer ;(. Correct answer was ${result}` );
+            console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'` );
             console.log(`Let's try again, ${name}!`);
             break;
         }

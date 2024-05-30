@@ -6,7 +6,7 @@ console.log('Welcome to the Brain Games!');
 const name = getName();
 
 const generateValue = () => {
-    return Math.floor(Math.random() * 20);
+    return Math.floor(Math.random() * 20) + 1;
 }
 
 const findDivisor = (a, b) => {
