@@ -3,10 +3,11 @@ npm link
 chmod +x bin/brain-games.js
 chmod +x bin/brain-gcd.js
 chmod +x bin/brain-progression.js
+chmod +x bin/brain-prime.js
 
 
-asciinema rec prog.cast
+asciinema rec prime.cast
 exit
-asciinema upload prog.cast
-brain-progression
+asciinema upload prime.cast
+brain-prime
 
