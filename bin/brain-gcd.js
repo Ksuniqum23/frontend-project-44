@@ -10,8 +10,8 @@ const generateValue = () => {
 }
 
 const findDivisor = (a, b) => {
-    let d = Math.min(a, b);
-    for (d; d > 0; d--) {
+
+    for (let d = Math.min(a, b); d > 0; d--) {
         if (a % d === 0 && b % d === 0) {
             return d;
         }

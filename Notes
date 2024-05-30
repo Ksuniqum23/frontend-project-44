@@ -2,7 +2,11 @@ npm publish --dry-run
 npm link
 chmod +x bin/brain-games.js
 chmod +x bin/brain-gcd.js
+chmod +x bin/brain-progression.js
 
 
-asciinema rec gcd.cast
-asciinema upload gcd.cast
+asciinema rec prog.cast
+exit
+asciinema upload prog.cast
+brain-progression
+
