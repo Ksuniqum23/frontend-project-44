@@ -14,9 +14,7 @@ const generateAmount = () => {
   return variants[randomIndex];
 };
 
-const generateHiddenIndex = (arr) => {
-  return Math.floor(Math.random() * (arr.length));
-};
+const generateHiddenIndex = (arr) => Math.floor(Math.random() * (arr.length));
 
 const generateProgression = () => {
   const start = generateValue();
