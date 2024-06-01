@@ -2,8 +2,11 @@
 import readlineSync from 'readline-sync';
 import getName from '../src/cli.js';
 
+
 console.log('Welcome to the Brain Games!');
 const name = getName();
+console.log(`Hello, ${name}!`);
+
 
 const generateValue = () => Math.floor(Math.random() * 50);
 
