@@ -5,45 +5,43 @@ import getName from '../src/cli.js';
 console.log('Welcome to the Brain Games!');
 const name = getName();
 
-const generateValue = () => {
-    return Math.floor(Math.random() * 99) + 1;
-}
+const generateValue = () => Math.floor(Math.random() * 99) + 1;
 
 const isPrime = (value) => {
-    for (let i = 2; i < value; i++) {
-        if (value % i === 0) {
-            return 'no';
-        }
+  for (let i = 2; i < value; i++) {
+    if (value % i === 0) {
+      return 'no';
     }
-    return 'yes';
-}
+  }
+  return 'yes';
+};
 
 const gameSet = () => {
-    const question = generateValue();
-    const result = isPrime(question);
-    console.log(`Question: ${question}`);
-    const answer = readlineSync.question('Your answer: ');
-    return [result, answer];
-}
+  const question = generateValue();
+  const result = isPrime(question);
+  console.log(`Question: ${question}`);
+  const answer = readlineSync.question('Your answer: ');
+  return [result, answer];
+};
 
 const brainPrimeGame = (name) => {
-    const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-    console.log(task);
+  const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+  console.log(task);
 
-    for (let i = 0; i < 3; i++) {
-        const [result, answer] = gameSet();
-        if (result === answer) {
-            console.log('Correct!');
-        } else {
-            console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'` );
-            console.log(`Let's try again, ${name}!`);
-            break;
-        }
-
-        if (i === 2) {
-            console.log(`Congratulations, ${name}!`);
-        }
+  for (let i = 0; i < 3; i++) {
+    const [result, answer] = gameSet();
+    if (result === answer) {
+      console.log('Correct!');
+    } else {
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'`);
+      console.log(`Let's try again, ${name}!`);
+      break;
     }
-}
+
+    if (i === 2) {
+      console.log(`Congratulations, ${name}!`);
+    }
+  }
+};
 
 brainPrimeGame(name);

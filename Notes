@@ -9,5 +9,10 @@ chmod +x bin/brain-prime.js
 asciinema rec prime.cast
 exit
 asciinema upload prime.cast
-brain-prime
+
+
+
+npx eslint .
+npx eslint . --fix
+
 
