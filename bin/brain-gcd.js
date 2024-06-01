@@ -9,11 +9,13 @@ console.log(`Hello, ${name}!`);
 const generateValue = () => Math.floor(Math.random() * 20) + 1;
 
 const findDivisor = (a, b) => {
-  for (let d = Math.min(a, b); d > 0; d--) {
+  let d = Math.min(a, b);
+  for (d; d > 0; d -= 1) {
     if (a % d === 0 && b % d === 0) {
       return d;
     }
   }
+  return 1;
 };
 
 const gameSet = () => {
@@ -25,10 +27,10 @@ const gameSet = () => {
   return [result, answer];
 };
 
-const brainGndGame = (name) => {
+const brainGndGame = () => {
   const task = 'Find the greatest common divisor of given numbers.';
   console.log(task);
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i += 1) {
     const [result, answer] = gameSet();
     if (result === answer) {
       console.log('Correct!');

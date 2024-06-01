@@ -20,17 +20,12 @@ const generateMathForm = () => {
   const operator = generateOperation();
   const mathFormString = `${a} ${operator} ${b}`;
   let resultMathForm;
-  switch (operator) {
-    case '+':
-      resultMathForm = a + b;
-      break;
-    case '-':
-      resultMathForm = a - b;
-      break;
-    case '*':
-      resultMathForm = a * b;
-      break;
-    default: 'error';
+  if (operator === '+') {
+    resultMathForm = a + b;
+  } else if (operator === '-') {
+    resultMathForm = a - b;
+  } else if (operator === '*') {
+    resultMathForm = a * b;
   }
   return [mathFormString, resultMathForm];
 };
@@ -42,11 +37,11 @@ const gameSet = () => {
   return [result, answer];
 };
 
-const brainCalcGame = (name) => {
+const brainCalcGame = () => {
   const task = 'What is the result of the expression?';
   console.log(task);
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i += 1) {
     const [result, answer] = gameSet();
     if (result === answer) {
       console.log('Correct!');

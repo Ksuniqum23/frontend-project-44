@@ -9,7 +9,7 @@ console.log(`Hello, ${name}!`);
 const generateValue = () => Math.floor(Math.random() * 99) + 1;
 
 const isPrime = (value) => {
-  for (let i = 2; i < value; i++) {
+  for (let i = 2; i < value; i += 1) {
     if (value % i === 0) {
       return 'no';
     }
@@ -25,11 +25,11 @@ const gameSet = () => {
   return [result, answer];
 };
 
-const brainPrimeGame = (name) => {
+const brainPrimeGame = () => {
   const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   console.log(task);
 
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i += 1) {
     const [result, answer] = gameSet();
     if (result === answer) {
       console.log('Correct!');

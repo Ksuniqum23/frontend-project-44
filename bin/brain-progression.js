@@ -15,8 +15,7 @@ const generateAmount = () => {
 };
 
 const generateHiddenIndex = (arr) => {
-  const randomIndex = Math.floor(Math.random() * (arr.length));
-  return randomIndex;
+  return Math.floor(Math.random() * (arr.length));
 };
 
 const generateProgression = () => {
@@ -25,7 +24,7 @@ const generateProgression = () => {
   const amount = generateAmount();
   const progression = [start];
 
-  for (let i = 1; i < amount; i++) {
+  for (let i = 1; i < amount; i += 1) {
     const newValue = start + step * i;
     progression.push(newValue);
   }
@@ -48,10 +47,10 @@ const gameSet = () => {
   return [result, answer];
 };
 
-const brainProgressionGame = (name) => {
+const brainProgressionGame = () => {
   const task = 'What number is missing in the progression?';
   console.log(task);
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 3; i += 1) {
     const [result, answer] = gameSet();
     if (result === answer) {
       console.log('Correct!');
