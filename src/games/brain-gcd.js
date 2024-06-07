@@ -1,4 +1,4 @@
-import readlineSync from 'readline-sync';
+import commonFunc from "../index.js";
 
 const generateValue = () => Math.floor(Math.random() * 20) + 1;
 
@@ -12,32 +12,13 @@ const findDivisor = (a, b) => {
   return 1;
 };
 
-const gameSet = () => {
+const brainGcdGame = () => {
+  const task = 'Find the greatest common divisor of given numbers.';
   const a = generateValue();
   const b = generateValue();
-  console.log(`Question: ${a} ${b}`);
-  const answer = parseInt(readlineSync.question('Your answer: '), 10);
+  const question = `${a} ${b}`;
   const result = findDivisor(a, b);
-  return [result, answer];
+  return [task, question, result];
 };
 
-const brainGndGame = (name) => {
-  const task = 'Find the greatest common divisor of given numbers.';
-  console.log(task);
-  for (let i = 0; i < 3; i += 1) {
-    const [result, answer] = gameSet();
-    if (result === answer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was ${result}`);
-      console.log(`Let's try again, ${name}!`);
-      break;
-    }
-
-    if (i === 2) {
-      console.log(`Congratulations, ${name}!`);
-    }
-  }
-};
-
-export default brainGndGame;
+export default (name) => commonFunc(brainGcdGame, name);
