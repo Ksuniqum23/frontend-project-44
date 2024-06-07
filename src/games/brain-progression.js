@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import commonFunc from "../index.js";
 
 const generateValue = () => Math.floor(Math.random() * 10);
 
@@ -32,30 +33,10 @@ const getQuestion = () => {
   return [question, hiddenItem];
 };
 
-const gameSet = () => {
-  const [question, result] = getQuestion();
-  console.log(`Question: ${question}`);
-  const answer = parseInt(readlineSync.question('Your answer: '), 10);
-  return [result, answer];
-};
-
-const brainProgressionGame = (name) => {
+const brainProgressionGame = () => {
   const task = 'What number is missing in the progression?';
-  console.log(task);
-  for (let i = 0; i < 3; i += 1) {
-    const [result, answer] = gameSet();
-    if (result === answer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was ${result}`);
-      console.log(`Let's try again, ${name}!`);
-      break;
-    }
-
-    if (i === 2) {
-      console.log(`Congratulations, ${name}!`);
-    }
-  }
+  const [question, result] = getQuestion();
+  return [task, question, result];
 };
 
-export default brainProgressionGame;
+export default (name) => commonFunc(brainProgressionGame, name);

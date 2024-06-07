@@ -1,5 +1,7 @@
 #!/usr/bin/env node
-import { sayHello, chooseTheGame } from '../src/games/brain-games.js';
+// import { sayHello, chooseTheGame } from '../src/games/brain-games.js';
+import {sayHello} from "../src/games/brain-games.js";
 
-const name = sayHello();
-chooseTheGame(name);
+sayHello();
+//const name = sayHello();
+// chooseTheGame(name);
