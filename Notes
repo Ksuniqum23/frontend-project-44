@@ -16,3 +16,6 @@ npx eslint .
 npx eslint . --fix
 
 
+git rm -r --cached .idea
+git rm -r --cached node_modules
+
