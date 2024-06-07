@@ -13,7 +13,7 @@ const brainEvenGame = () => {
   const task = 'Answer "yes" if the number is even, otherwise answer "no".';
   const question = generateValue();
   const result = isEven(question);
-  return [task, question, result];
+  return { task, question, result };
 };
 
 export default (name) => commonFunc(brainEvenGame, name);

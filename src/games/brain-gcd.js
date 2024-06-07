@@ -18,7 +18,7 @@ const brainGcdGame = () => {
   const b = generateValue();
   const question = `${a} ${b}`;
   const result = findDivisor(a, b);
-  return [task, question, result];
+  return { task, question, result };
 };
 
 export default (name) => commonFunc(brainGcdGame, name);

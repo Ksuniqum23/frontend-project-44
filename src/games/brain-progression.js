@@ -35,7 +35,7 @@ const getQuestion = () => {
 const brainProgressionGame = () => {
   const task = 'What number is missing in the progression?';
   const [question, result] = getQuestion();
-  return [task, question, result];
+  return { task, question, result };
 };
 
 export default (name) => commonFunc(brainProgressionGame, name);

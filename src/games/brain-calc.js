@@ -27,7 +27,7 @@ const generateMathForm = () => {
 const brainCalcGame = () => {
   const task = 'What is the result of the expression?';
   const [question, result] = generateMathForm();
-  return [task, question, result];
+  return { task, question, result };
 };
 
 export default (name) => commonFunc(brainCalcGame, name);
