@@ -1,9 +1,6 @@
 #!/usr/bin/env node
-import getName from '../src/cli.js';
 import brainPrimeGame from "../src/games/brain-prime.js";
+import sayHello from "../src/games/brain-games.js";
 
-console.log('Welcome to the Brain Games!');
-const name = getName();
-console.log(`Hello, ${name}!`);
-
+const name = sayHello();
 brainPrimeGame(name);

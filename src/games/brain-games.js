@@ -1,5 +1,10 @@
-import getName from '../src/cli.js';
+import getName from "../cli.js";
 
-console.log('Welcome to the Brain Games!');
-const name = getName();
-console.log(`Hello, ${name}!`);
+const sayHello = () => {
+    console.log('Welcome to the Brain Games!');
+    const name = getName();
+    console.log(`Hello, ${name}!`)
+    return name;
+}
+
+export default sayHello;
