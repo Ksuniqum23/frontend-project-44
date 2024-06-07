@@ -5,9 +5,4 @@ const getName = () => {
   return name;
 };
 
-const getGame = () => {
-  const game = readlineSync.question('Choose the game:  ');
-  return game;
-};
-
-export { getName, getGame };
+export default getName;

@@ -1,5 +1,4 @@
-import readlineSync from 'readline-sync';
-import commonFunc from "../index.js";
+import commonFunc from '../index.js';
 
 const generateValue = () => Math.floor(Math.random() * 10);
 

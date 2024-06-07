@@ -1,4 +1,4 @@
-import commonFunc from "../index.js";
+import commonFunc from '../index.js';
 
 const generateValue = () => Math.floor(Math.random() * 50);
 
@@ -17,4 +17,3 @@ const brainEvenGame = () => {
 };
 
 export default (name) => commonFunc(brainEvenGame, name);
-

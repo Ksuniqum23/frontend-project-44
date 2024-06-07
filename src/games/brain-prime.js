@@ -1,4 +1,4 @@
-import commonFunc from "../index.js";
+import commonFunc from '../index.js';
 
 const generateValue = () => Math.floor(Math.random() * 99) + 1;
 
