@@ -6,9 +6,9 @@ chmod +x bin/brain-progression.js
 chmod +x bin/brain-prime.js
 
 
-asciinema rec prime.cast
+asciinema rec test.cast
 exit
-asciinema upload prime.cast
+asciinema upload test.cast
 
 
 
