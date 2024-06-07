@@ -6,7 +6,14 @@ const commonFunc = (game, name) => {
     for (let i = 0; i < 3; i += 1) {
         const [_task, question, result] = game(name);
         console.log(`Question: ${question}`);
-        const answer = parseInt(readlineSync.question('Your answer: '), 10);
+
+        let answer;
+        if (typeof(result) === 'string') {
+            answer = readlineSync.question('Your answer: ');
+        } else {
+            answer = parseInt(readlineSync.question('Your answer: '), 10);
+        }
+
         if (result === answer) {
             console.log('Correct!');
         } else {
