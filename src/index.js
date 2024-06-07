@@ -1,7 +1,12 @@
+import readlineSync from "readline-sync";
+
 const commonFunc = (game, name) => {
+    const [task, ...rest] = game(name);
+    console.log(task);
     for (let i = 0; i < 3; i += 1) {
-        const [task, result, answer] = game(name);
-        console.log(task);
+        const [_task, question, result] = game(name);
+        console.log(`Question: ${question}`);
+        const answer = parseInt(readlineSync.question('Your answer: '), 10);
         if (result === answer) {
             console.log('Correct!');
         } else {

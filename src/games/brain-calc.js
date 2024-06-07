@@ -1,4 +1,3 @@
-import readlineSync from 'readline-sync';
 import commonFunc from "../index.js";
 
 const generateValue = () => Math.floor(Math.random() * 50);
@@ -25,35 +24,13 @@ const generateMathForm = () => {
   return [mathFormString, resultMathForm];
 };
 
-const brainCalcGame = (name) => {
+const brainCalcGame = () => {
   const task = 'What is the result of the expression?';
-  const [value, result] = generateMathForm();
-  console.log(`Question: ${value}`);
-  const answer = parseInt(readlineSync.question('Your answer: '), 10);
-  return [task, result, answer];
+  const [question, result] = generateMathForm();
+  return [task, question, result];
 };
 
 export default (name) => commonFunc(brainCalcGame, name);
 
-
-// const brainCalcGame = (name) => {
-//   const task = 'What is the result of the expression?';
-//   console.log(task);
-//
-//   for (let i = 0; i < 3; i += 1) {
-//     const [result, answer] = gameSet();
-//     if (result === answer) {
-//       console.log('Correct!');
-//     } else {
-//       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'`);
-//       console.log(`Let's try again, ${name}!`);
-//       break;
-//     }
-//
-//     if (i === 2) {
-//       console.log(`Congratulations, ${name}!`);
-//     }
-//   }
-// };
 
 

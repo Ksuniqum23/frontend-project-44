@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import commonFunc from "../index.js";
 
 const generateValue = () => Math.floor(Math.random() * 50);
 
@@ -9,7 +10,7 @@ const isEven = (num) => {
   return 'no';
 };
 
-const gameSet = () => {
+const brainEvenGame = () => {
   const question = generateValue();
   const result = isEven(question);
   console.log(`Question: ${question}`);
@@ -17,24 +18,25 @@ const gameSet = () => {
   return [result, answer];
 };
 
-const brainEvenGame = (name) => {
-  const task = 'Answer "yes" if the number is even, otherwise answer "no".';
-  console.log(task);
+export default (name) => commonFunc(brainEvenGame, name);
+// const brainEvenGame = (name) => {
+//   const task = 'Answer "yes" if the number is even, otherwise answer "no".';
+//   console.log(task);
+//
+//   for (let i = 0; i < 3; i += 1) {
+//     const [result, answer] = gameSet();
+//     if (result === answer) {
+//       console.log('Correct!');
+//     } else {
+//       console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'`);
+//       console.log(`Let's try again, ${name}!`);
+//       break;
+//     }
+//
+//     if (i === 2) {
+//       console.log(`Congratulations, ${name}!`);
+//     }
+//   }
+// };
 
-  for (let i = 0; i < 3; i += 1) {
-    const [result, answer] = gameSet();
-    if (result === answer) {
-      console.log('Correct!');
-    } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${result}'`);
-      console.log(`Let's try again, ${name}!`);
-      break;
-    }
-
-    if (i === 2) {
-      console.log(`Congratulations, ${name}!`);
-    }
-  }
-};
-
-export default brainEvenGame;
+// export default brainEvenGame;
