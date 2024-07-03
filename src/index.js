@@ -22,10 +22,7 @@ const commonFunc = (game, name) => {
       console.log(`Let's try again, ${name}!`);
       break;
     }
-
-    if (i === 2) {
-      console.log(`Congratulations, ${name}!`);
-    }
+    console.log(`Congratulations, ${name}!`);
   }
 };
 
