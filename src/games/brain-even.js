@@ -4,15 +4,18 @@ const generateValue = () => Math.floor(Math.random() * 50);
 
 const isEven = (num) => {
   if (num % 2 === 0) {
-    return 'yes';
+    return true;
   }
-  return 'no';
+  return false;
 };
 
 const brainEvenGame = () => {
   const task = 'Answer "yes" if the number is even, otherwise answer "no".';
   const question = generateValue();
-  const result = isEven(question);
+  let result = 'no';
+  if (isEven(question) === true) {
+    result = 'yes';
+  }
   return { task, question, result };
 };
 
