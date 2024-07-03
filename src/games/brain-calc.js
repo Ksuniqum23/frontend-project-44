@@ -8,19 +8,22 @@ const generateOperation = () => {
   return operations[randomIndex];
 };
 
+const generataResult = (a, b, operator) => {
+  if (operator === '+') {
+    return a + b;
+  } else if (operator === '-') {
+    return a - b;
+  } else if (operator === '*') {
+    return a * b;
+  }
+}
 const generateMathForm = () => {
   const a = generateValue();
   const b = generateValue();
   const operator = generateOperation();
   const mathFormString = `${a} ${operator} ${b}`;
-  let resultMathForm;
-  if (operator === '+') {
-    resultMathForm = a + b;
-  } else if (operator === '-') {
-    resultMathForm = a - b;
-  } else if (operator === '*') {
-    resultMathForm = a * b;
-  }
+  const resultMathForm = generataResult(a, b, operator);
+
   return [mathFormString, resultMathForm];
 };
 
