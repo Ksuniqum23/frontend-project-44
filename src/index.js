@@ -3,7 +3,8 @@ import readlineSync from 'readline-sync';
 const commonFunc = (game, name) => {
   const { task } = game(name);
   console.log(task);
-  for (let i = 0; i < 3; i += 1) {
+  const maxLevel = 3;
+  for (let i = 0; i < maxLevel; i += 1) {
     const { question, result } = game(name);
     console.log(`Question: ${question}`);
 
