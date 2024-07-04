@@ -12,8 +12,9 @@ const findDivisor = (a, b) => {
   return 1;
 };
 
+const task = 'Find the greatest common divisor of given numbers.';
+
 const brainGcdGame = () => {
-  const task = 'Find the greatest common divisor of given numbers.';
   const a = generateValue();
   const b = generateValue();
   const question = `${a} ${b}`;
@@ -21,4 +22,4 @@ const brainGcdGame = () => {
   return { task, question, result };
 };
 
-export default () => commonFunc(brainGcdGame);
+export default () => commonFunc(brainGcdGame, task);

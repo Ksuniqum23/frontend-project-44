@@ -9,14 +9,15 @@ const isEven = (num) => {
   return false;
 };
 
+const task = 'Answer "yes" if the number is even, otherwise answer "no".';
+
 const brainEvenGame = () => {
-  const task = 'Answer "yes" if the number is even, otherwise answer "no".';
   const question = generateValue();
   let result = 'no';
-  if (isEven(question) === true) {
+  if (isEven(question)) {
     result = 'yes';
   }
   return { task, question, result };
 };
 
-export default () => commonFunc(brainEvenGame);
+export default () => commonFunc(brainEvenGame, task);

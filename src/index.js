@@ -3,8 +3,7 @@ import sayHello from './games/brain-games.js';
 
 const name = sayHello();
 
-const commonFunc = (game) => {
-  const { task } = game(name);
+const commonFunc = (game, task) => {
   console.log(task);
   const maxLevel = 3;
   for (let i = 0; i < maxLevel; i += 1) {

@@ -11,14 +11,15 @@ const isPrime = (value) => {
   return true;
 };
 
+const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+
 const brainPrimeGame = () => {
-  const task = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const question = generateValue();
   let result = 'no';
-  if (isPrime(question) === true) {
+  if (isPrime(question)) {
     result = 'yes';
   }
   return { task, question, result };
 };
 
-export default () => commonFunc(brainPrimeGame);
+export default () => commonFunc(brainPrimeGame, task);
