@@ -1,6 +1,9 @@
 import readlineSync from 'readline-sync';
+import sayHello from './games/brain-games.js';
 
-const commonFunc = (game, name) => {
+const name = sayHello();
+
+const commonFunc = (game) => {
   const { task } = game(name);
   console.log(task);
   const maxLevel = 3;

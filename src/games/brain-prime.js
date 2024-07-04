@@ -21,4 +21,4 @@ const brainPrimeGame = () => {
   return { task, question, result };
 };
 
-export default (name) => commonFunc(brainPrimeGame, name);
+export default () => commonFunc(brainPrimeGame);

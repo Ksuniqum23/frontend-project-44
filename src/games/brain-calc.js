@@ -11,12 +11,14 @@ const generateOperation = () => {
 const generataResult = (a, b, operator) => {
   if (operator === '+') {
     return a + b;
-  } else if (operator === '-') {
+  } if (operator === '-') {
     return a - b;
-  } else if (operator === '*') {
+  } if (operator === '*') {
     return a * b;
   }
-}
+  return 'mistake';
+};
+
 const generateMathForm = () => {
   const a = generateValue();
   const b = generateValue();
@@ -33,4 +35,4 @@ const brainCalcGame = () => {
   return { task, question, result };
 };
 
-export default (name) => commonFunc(brainCalcGame, name);
+export default () => commonFunc(brainCalcGame);
