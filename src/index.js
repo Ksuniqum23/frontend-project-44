@@ -10,11 +10,9 @@ const commonFunc = (game, task) => {
     const { question, result } = game(name);
     console.log(`Question: ${question}`);
 
-    let answer;
-    if (typeof (result) === 'string') {
-      answer = readlineSync.question('Your answer: ');
-    } else {
-      answer = parseInt(readlineSync.question('Your answer: '), 10);
+    let answer = readlineSync.question('Your answer: ');;
+    if (typeof (result) !== 'string') {
+      answer = parseInt(answer);
     }
 
     if (result === answer) {
